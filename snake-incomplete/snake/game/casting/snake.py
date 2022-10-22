@@ -12,11 +12,12 @@ class Snake(Actor):
     Attributes:
         _points (int): The number of points the food is worth.
     """
-    def __init__(self, color):
+    def __init__(self, temp):
         super().__init__()
         self._segments = []
+        self._temp = temp
         self._prepare_body()
-        self._color = color
+        
         
     # def __init__(self, color):
     #     super().__init__()
@@ -62,10 +63,10 @@ class Snake(Actor):
 
         color = None
 
-        if self._color == "GREEN":
+        if self._temp == "green":
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
-            color = constants.WHITE
+            color = constants.GREEN
         else:
             x = int(constants.MAX_X / 4)
             y = int(constants.MAX_Y / 4)
